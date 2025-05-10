@@ -1,0 +1,317 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.8s ease, color 0.8s ease, background-image 0.8s ease;
+    /* Added background-image transition */
+    background-size: cover;
+    /* Cover the entire page */
+    background-position: center center;
+    /* Center the image */
+    background-attachment: fixed;
+    /* Keep the background fixed during scroll */
+    background-repeat: no-repeat;
+    /* Prevent the image from repeating */
+    min-height: 100vh;
+    /* Ensure body takes at least full viewport height */
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex-grow: 1;
+    /* Allows main content to expand and push footer down */
+    padding: 20px;
+    text-align: center;
+}
+
+header,
+footer {
+    padding: 18px 25px;
+    text-align: center;
+    transition: background-color 0.6s ease, color 0.6s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.3em;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+/* --- Theme Definitions --- */
+
+/* Light Theme: Sakura Light */
+body.light-theme {
+    /* Image Path: Make sure 'images/school-girls-with-cherry-blossoms.jpg' is correct */
+    background-image: linear-gradient(rgba(255, 255, 255, 0.65), rgba(255, 240, 245, 0.85)), url('images/school-girls-with-cherry-blossoms.jpg');
+    color: #3a2e39;
+    /* Dark desaturated magenta */
+}
+
+body.light-theme header,
+body.light-theme footer {
+    background-color: rgba(255, 192, 203, 0.75);
+    /* Light pink, semi-transparent */
+    color: #5c3c58;
+    /* Darker pink for header/footer text */
+}
+
+body.light-theme .preferences,
+body.light-theme .animation-container,
+body.light-theme .interactive-box-container {
+    background-color: rgba(255, 255, 255, 0.85);
+    /* Slightly more opaque white for content boxes */
+    border-radius: 12px;
+    padding: 25px;
+    /* Increased padding */
+    margin-top: 20px;
+    /* For sections */
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    /* Softer shadow */
+}
+
+body.light-theme section h2 {
+    color: #d9466f;
+    /* Stronger pink for headings */
+    padding-bottom: 12px;
+    margin-top: 0;
+    /* Remove default h2 margin if it's inside a padded box */
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(210, 67, 107, 0.35);
+    display: inline-block;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+body.light-theme .preferences select,
+body.light-theme .preferences button,
+body.light-theme #actionButton {
+    background-color: #ff8fab;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.light-theme .preferences button:hover,
+body.light-theme #actionButton:hover {
+    background-color: #ff6b99;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+body.light-theme .interactive-box {
+    background-color: #ffb6c1;
+    /* Light Pink */
+    color: #3a2e39;
+}
+
+body.light-theme .interactive-box:hover {
+    background-color: #ffa7b6;
+    transform: translateY(-12px) rotate(5deg) scale(1.12);
+    box-shadow: 0 14px 28px rgba(210, 67, 107, 0.25);
+}
+
+
+/* Dark Theme: Cherry Blossom Night */
+body.dark-theme {
+    /* Image Path: Make sure 'images/school-girls-with-cherry-blossoms.jpg' is correct */
+    /* Consider a different image or a stronger dark overlay for night theme if available */
+    background-image: linear-gradient(rgba(30, 15, 30, 0.88), rgba(50, 25, 50, 0.96)), url('images/school-girls-with-cherry-blossoms.jpg');
+    color: #f2e8f2;
+    /* Light lavender/off-white */
+}
+
+body.dark-theme header,
+body.dark-theme footer {
+    background-color: rgba(50, 30, 50, 0.85);
+    /* Darker purple, semi-transparent */
+    color: #ffd7ff;
+    /* Light pink/magenta for text */
+}
+
+body.dark-theme .preferences,
+body.dark-theme .animation-container,
+body.dark-theme .interactive-box-container {
+    background-color: rgba(45, 25, 45, 0.8);
+    /* Dark, semi-transparent purple for content boxes */
+    border-radius: 12px;
+    padding: 25px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+body.dark-theme section h2 {
+    color: #ffadda;
+    /* Bright pink/magenta for headings */
+    padding-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 157, 226, 0.35);
+    display: inline-block;
+    background-color: transparent;
+    box-shadow: none;
+}
+
+body.dark-theme .preferences select,
+body.dark-theme .preferences button,
+body.dark-theme #actionButton {
+    background-color: #d13063;
+    /* Deep magenta */
+    color: #fff0f5;
+    /* Lavender blush text */
+    border: none;
+    padding: 14px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    align-items: flex-start;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-theme .preferences button:hover,
+body.dark-theme #actionButton:hover {
+    background-color: #b02050;
+    /* Darker magenta on hover */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+body.dark-theme .interactive-box {
+    background-color: #6a3b60;
+    /* Dark Purple */
+    color: #f2e8f2;
+}
+
+body.dark-theme .interactive-box:hover {
+    background-color: #8b4f7e;
+    /* Lighter Dark Purple on hover */
+    transform: translateY(-12px) rotate(5deg) scale(1.12);
+    box-shadow: 0 14px 28px rgba(199, 55, 111, 0.35);
+}
+
+/* --- General Section & Container Styling (applies to both themes unless overridden) --- */
+.preferences-section,
+.animation-section,
+.transition-section {
+    /* margin-bottom: 35px; combined into .preferences etc. margin-bottom */
+    /* padding: 10px; combined into .preferences etc. padding */
+}
+
+.preferences label {
+    margin-right: 12px;
+    font-weight: 500;
+    /* Slightly less bold */
+}
+
+.preferences select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #bbb;
+    /* Default border, theme can override */
+    margin-right: 15px;
+    font-size: 0.95em;
+    background-color: #fff;
+    /* Default select background */
+}
+
+body.dark-theme .preferences select {
+    background-color: #504050;
+    color: #f0e6f0;
+    border-color: #776077;
+}
+
+/* Retain image styling and animation */
+#animatedImage {
+    margin-top: 25px;
+    /* More space */
+    width: 130px;
+    /* Slightly smaller to fit modern designs */
+    height: 130px;
+    border-radius: 50%;
+    /* Circular */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+    border: 3px solid;
+    /* Border color will be inherited or can be set per theme */
+    transition: transform 0.6s cubic-bezier(0.68, -0.55, 0.27, 1.55), opacity 0.6s ease;
+}
+
+body.light-theme #animatedImage {
+    border-color: #ffdde1;
+    /* Light pinkish border */
+}
+
+body.dark-theme #animatedImage {
+    border-color: #793f6d;
+    /* Dark magenta/purple border */
+}
+
+/* CSS Animation: Spin and Pop (Modified) */
+@keyframes spinAndPop {
+    0% {
+        transform: rotate(0deg) scale(1);
+        opacity: 0.8;
+    }
+
+    40% {
+        transform: rotate(160deg) scale(1.25);
+        opacity: 1;
+    }
+
+    60% {
+        transform: rotate(200deg) scale(0.9);
+        opacity: 0.9;
+    }
+
+    100% {
+        transform: rotate(360deg) scale(1);
+        opacity: 0.8;
+    }
+}
+
+.start-animation {
+    animation-name: spinAndPop;
+    animation-duration: 2.2s;
+    /* Slightly faster */
+    animation-timing-function: cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    animation-iteration-count: 1;
+}
+
+.interactive-box-container {
+    display: flex;
+    justify-content: center;
+    /* margin-top: 20px;  now part of .interactive-box-container styling block */
+}
+
+.interactive-box {
+    width: 170px;
+    height: 170px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    border-radius: 15px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s ease, transform 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55), box-shadow 0.4s ease;
+}
+
+footer {
+    margin-top: auto;
+    /* Pushes footer to the bottom */
+    font-size: 0.9em;
+    padding: 15px 20px;
+    /* Adjusted padding from main header/footer block for distinctness if needed */
+}

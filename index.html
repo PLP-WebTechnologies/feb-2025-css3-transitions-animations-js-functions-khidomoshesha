@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Animations & LocalStorage with Themes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>Interactive Animations & Themes</h1>
+    </header>
+
+    <main>
+        <section class="preferences-section">
+            <h2>User Preferences</h2>
+            <div class="preferences">
+                <label for="themeSelector">Select Theme:</label>
+                <select id="themeSelector">
+                    <option value="light">Sakura Light</option>
+                    <option value="dark">Cherry Blossom Night</option>
+                </select>
+                <button id="savePrefsButton">Save Preferences</button>
+            </div>
+        </section>
+
+        <section class="animation-section">
+            <h2>Animation Demo</h2>
+            <div class="animation-container">
+                <button id="actionButton">Animate Image!</button>
+                <img src="images/pink-flower.jpg" alt="Pink Flower Animation" id="animatedImage">
+            </div>
+        </section>
+
+        <section class="transition-section">
+            <h2>Hover Effect Demo</h2>
+            <div class="interactive-box-container">
+                <div class="interactive-box">Hover Me</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Dynamic Web Page Demo &copy; 2025</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
